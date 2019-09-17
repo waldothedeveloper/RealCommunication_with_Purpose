@@ -1,7 +1,9 @@
 import React from "react";
 import mainlogo from "../image/main-logo.png";
+import "../css/language.css";
 
 export default function Header() {
+  const [language, setSwitchLanguage] = React.useState(false);
   return (
     <header className='site-header'>
       <div className='container'>
@@ -9,19 +11,28 @@ export default function Header() {
           <div className='col-sm-3 col-6 col-lg-2 col-xl-2 order-lg-1'>
             <div className='brand'>
               <a href='#nothing'>
-                {/* //! TODO - need to fix this horrible logo */}
-                <img
-                  src={mainlogo}
-                  alt='main-logo'
-                  // style={{ width: 32, height: 32 }}
-                />
+                <img src={mainlogo} alt='main-logo' />
               </a>
             </div>
           </div>
           <div className='col-sm-7 col-lg-2 col-xl-2 order-lg-3 d-none d-sm-block'>
             <div className='header-btns'>
-              <div className='btn-2'>
-                <a href='#one'>Start free trial</a>
+              <div className={language ? "btn-group show" : "btn-group"}>
+                <button
+                  onClick={() => setSwitchLanguage(!language)}
+                  className='btn-button'
+                >
+                  Select language
+                </button>
+                <div className={language ? "langUl show" : "langUl"}>
+                  <a className='anc' href='#nothing' value='volvo'>
+                    English
+                  </a>
+                  <div className='dropdown-divider'></div>
+                  <a className='anc' href='#nothing' alue='saab'>
+                    Spanish
+                  </a>
+                </div>
               </div>
             </div>
           </div>

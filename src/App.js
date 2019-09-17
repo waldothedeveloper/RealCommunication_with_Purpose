@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
+import NavBar from "./components/Navbar";
+// import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Clients from "./components/Clients";
 import About from "./components/About";
@@ -14,7 +15,8 @@ import "./css/custom.css";
 function App() {
   return (
     <div className='site-wrapper'>
-      <Header />
+      <NavBar />
+      {/* <Header /> */}
       <Hero />
       <Clients />
       <About />

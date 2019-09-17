@@ -177,7 +177,7 @@
   justify-content: center;
 }
 
-.header-btns .btn-2 {
+/* .header-btns .btn-2 {
   width: 137px;
   height: 40px;
   border-radius: 3px;
@@ -185,21 +185,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
+} */
 
-.header-btns .btn-2 a {
+/* .header-btns .btn-2 a {
   color: #ffffff;
   font-family: "Karla", sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -1px;
-}
+} */
 
 /*  Mobile Menu / Mean Menu Reset  */
 .mobile-menu.mean-container .mean-bar {
