@@ -1,0 +1,26 @@
+[
+  {
+    "navbar": {
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  {
+    "header": {
+      "h1": "Communication with Purpose",
+      "p1": "Empowering and inspiring future generations in our community"
+    }
+  },
+  {
+    "about": {
+      "h2": "Communication with Purpose (CWP) is a volunteer run organization that serves the Santiago de Cuba community since 2016. Its goal is to create social change by empowering and teaching children in their community about communication. CWP visits neighboring communities and schools in the Santiago de Cuba area and offers lessons to local children to help them develop confidence in their own voice, thoughts and abilities. Children are taught various lessons in the form of games such as group debates, life scenario topics, and sports game narrations to help with their communication and perseverance skills in a creative and supportive atmosphere.",
+      "p": "Frank Mario Periche is the founder and creator of Communication with Purpose. His professional career began in 2012 when he studied Social Communications in the University of Oriente in Santiago de Cuba. He is also presently the sports commentator for Santiago de Cuba’s local radio station “Guillermon Moncada.” "
+    }
+  },
+  {
+    "footer": {
+      "email": "communicationwithpurpose@gmail.com",
+      "phone": "+53-5-3086970"
+    }
+  }
+]

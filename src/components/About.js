@@ -1,34 +1,30 @@
 import React from "react";
 import aboutLeftShape from "../image/about-left-shape.svg";
-import about from "../image/about.png";
-import about2 from "../image/about-2.png";
+import cubanChildren2 from "../image/cuban-children-2.png";
+import frankCreator from "../image/frank-creator.jpg";
 
-export default function About() {
+export default function About({ values, english, spanish }) {
   return (
-    <div>
+    <section id='about'>
       <section className='about-section-01'>
         <div className='container'>
           <div className='about-shape shape'>
             <img src={aboutLeftShape} alt='about-left' />
           </div>
           <div className='row'>
-            <div className='col-lg-6 col-md-6 col-xl-5 order-2 order-md-1'>
+            <div className='col-lg-12 col-md-12 col-xl-12 order-2 order-md-1'>
               <div className='about-left-content'>
-                <h2>Build Beautiful Landing Pages Faster.</h2>
+                <h2>{values.language === "English" ? "About" : "Acerca"}</h2>
                 <p>
-                  Create custom landing pages with Shades that convert more
-                  visitors than any website—no coding required.
+                  {values.language === "English"
+                    ? english[2].about.h2
+                    : spanish[2].about.h2}
                 </p>
-                <div className='about-btn'>
-                  <a href='#about'>
-                    Get started now <i className='icon icon-minimal-right' />
-                  </a>
+                <div className='col-lg-12 col-md-12 col-xl-12'>
+                  <div className='about-image'>
+                    <img src={cubanChildren2} alt='about' />
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='col-lg-6 col-md-6 col-xl-6 offset-xl-1 order-1 order-md-2'>
-              <div className='about-image'>
-                <img src={about} alt='about' />
               </div>
             </div>
           </div>
@@ -37,28 +33,28 @@ export default function About() {
       <section className='about-section-02'>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-6 col-md-5 col-xl-6'>
-              <div className='about-image-left'>
-                <img src={about2} alt='about2' />
+            <div className='col-lg-6 col-md-6 col-xl-6'>
+              <div className='about-right-content'>
+                <h2>
+                  {values.language === "English"
+                    ? "Meet the Founder"
+                    : "Conoce al Fundador"}
+                </h2>
+                <p>
+                  {values.language === "English"
+                    ? english[2].about.p
+                    : spanish[2].about.p}
+                </p>
               </div>
             </div>
-            <div className='col-lg-6 col-md-6 col-xl-5 offset-xl-1'>
-              <div className='about-right-content'>
-                <h2>Build Beautiful Landing Pages Faster.</h2>
-                <p>
-                  Create custom landing pages with Shades that convert more
-                  visitors than any website—no coding required.
-                </p>
-                <div className='about-btn'>
-                  <a href='#about'>
-                    Get started now <i className='icon icon-minimal-right' />
-                  </a>
-                </div>
+            <div className='col-lg-6 col-md-6 col-xl-6'>
+              <div className='about-image-left'>
+                <img src={frankCreator} alt='Frank M Periche the creator' />
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 }
