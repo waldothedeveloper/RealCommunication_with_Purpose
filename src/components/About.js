@@ -1,7 +1,9 @@
 import React from "react";
 import aboutLeftShape from "../image/about-left-shape.svg";
-import cubanChildren2 from "../image/cuban-children-2.png";
 import frankCreator from "../image/frank-creator.jpg";
+import frank6 from "../image/frank-6.jpg";
+import frank7 from "../image/frank-7.jpg";
+import "../css/hero.css";
 
 export default function About({ values, english, spanish }) {
   return (
@@ -15,14 +17,30 @@ export default function About({ values, english, spanish }) {
             <div className='col-lg-12 col-md-12 col-xl-12 order-2 order-md-1'>
               <div className='about-left-content'>
                 <h2>{values.language === "English" ? "About" : "Acerca"}</h2>
-                <p>
+                <p className='about-p'>
                   {values.language === "English"
                     ? english[2].about.h2
                     : spanish[2].about.h2}
                 </p>
                 <div className='col-lg-12 col-md-12 col-xl-12'>
                   <div className='about-image'>
-                    <img src={cubanChildren2} alt='about' />
+                    <img
+                      src={frank6}
+                      alt='frank-m-periche-teaching-kids-in-his-community'
+                    />
+                  </div>
+                </div>
+                <p className='about-p'>
+                  {values.language === "English"
+                    ? english[2].about.h3
+                    : spanish[2].about.h3}
+                </p>
+                <div className='col-lg-12 col-md-12 col-xl-12'>
+                  <div className='about-image'>
+                    <img
+                      src={frank7}
+                      alt='frank-m-periche-teaching-kids-in-his-community'
+                    />
                   </div>
                 </div>
               </div>
