@@ -3,9 +3,18 @@ import aboutLeftShape from "../image/about-left-shape.svg";
 import frankCreator from "../image/frank-creator.jpg";
 import frank6 from "../image/frank-6.jpg";
 import frank7 from "../image/frank-7.jpg";
+// import { useSpring, animated, config } from "react-spring";
 import "../css/hero.css";
 
 export default function About({ values, english, spanish }) {
+  // const props = useSpring({
+  //   opacity: 1,
+  //   color: "#FFF",
+  //   from: { opacity: 0, color: "#000" },
+  //   config: config.slow,
+  //   delay: 800
+  // });
+
   return (
     <section id='about'>
       <section className='about-section-01'>
@@ -25,6 +34,8 @@ export default function About({ values, english, spanish }) {
                 <div className='col-lg-12 col-md-12 col-xl-12'>
                   <div className='about-image'>
                     <img
+                      lazy='true'
+                      // style={props}
                       src={frank6}
                       alt='frank-m-periche-teaching-kids-in-his-community'
                     />
@@ -38,6 +49,8 @@ export default function About({ values, english, spanish }) {
                 <div className='col-lg-12 col-md-12 col-xl-12'>
                   <div className='about-image'>
                     <img
+                      lazy='true'
+                      // style={props}
                       src={frank7}
                       alt='frank-m-periche-teaching-kids-in-his-community'
                     />
