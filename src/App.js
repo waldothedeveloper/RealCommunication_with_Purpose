@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "./css/style.css";
 import "./css/settings.css";
 import "./css/custom.css";
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Footer from "./components/Footer";
 import Alert from "./components/Alert";
+import Loader from "./components/Loader";
 import * as english from "./utils/EnglishSiteContent.json";
 import * as spanish from "./utils/SpanishSiteContent.json";
+
+const About = React.lazy(() => import("./components/About"));
+const Footer = React.lazy(() => import("./components/Footer"));
 
 function App() {
   const [values, setValues] = React.useState({
@@ -46,16 +48,18 @@ function App() {
           english={english.default}
           spanish={spanish.default}
         />
-        <About
-          values={values}
-          english={english.default}
-          spanish={spanish.default}
-        />
-        <Footer
-          english={english.default}
-          spanish={spanish.default}
-          values={values}
-        />
+        <Suspense fallback={<Loader />}>
+          <About
+            values={values}
+            english={english.default}
+            spanish={spanish.default}
+          />
+          <Footer
+            english={english.default}
+            spanish={spanish.default}
+            values={values}
+          />
+        </Suspense>
       </div>
     );
   } else {
