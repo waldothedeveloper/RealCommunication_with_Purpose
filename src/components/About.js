@@ -3,17 +3,40 @@ import aboutLeftShape from "../image/about-left-shape.svg";
 import frankCreator from "../image/frank-creator.jpg";
 import frank6 from "../image/frank-6.jpg";
 import frank7 from "../image/frank-7.jpg";
-// import { useSpring, animated, config } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
+import useOnScreen from "../viewportHooks/UseOnScreen";
+import useOnScreen2 from "../viewportHooks/UseOnScreen2";
+import useOnScreen3 from "../viewportHooks/UseOnScreen3";
 import "../css/hero.css";
 
 export default function About({ values, english, spanish }) {
-  // const props = useSpring({
-  //   opacity: 1,
-  //   color: "#FFF",
-  //   from: { opacity: 0, color: "#000" },
-  //   config: config.slow,
-  //   delay: 800
-  // });
+  const ref = React.useRef();
+  const ref2 = React.useRef();
+  const ref3 = React.useRef();
+  const onScreenPhoto1 = useOnScreen(ref, "-10px");
+  const onScreenPhoto2 = useOnScreen2(ref2, "-10px");
+  const onScreenPhoto3 = useOnScreen3(ref3, "-10px");
+
+  const propsPhoto1 = useSpring({
+    opacity: onScreenPhoto1 ? 1 : 0,
+    from: { opacity: 0 },
+    config: config.slow,
+    delay: 500
+  });
+
+  const propsPhoto2 = useSpring({
+    opacity: onScreenPhoto2 ? 1 : 0,
+    from: { opacity: 0 },
+    config: config.slow,
+    delay: 800
+  });
+
+  const propsPhoto3 = useSpring({
+    opacity: onScreenPhoto3 ? 1 : 0,
+    from: { opacity: 0 },
+    config: config.slow,
+    delay: 800
+  });
 
   return (
     <section id='about'>
@@ -33,9 +56,9 @@ export default function About({ values, english, spanish }) {
                 </p>
                 <div className='col-lg-12 col-md-12 col-xl-12'>
                   <div className='about-image'>
-                    <img
-                      lazy='true'
-                      // style={props}
+                    <animated.img
+                      ref={ref}
+                      style={propsPhoto1}
                       src={frank6}
                       alt='frank-m-periche-teaching-kids-in-his-community'
                     />
@@ -48,9 +71,9 @@ export default function About({ values, english, spanish }) {
                 </p>
                 <div className='col-lg-12 col-md-12 col-xl-12'>
                   <div className='about-image'>
-                    <img
-                      lazy='true'
-                      // style={props}
+                    <animated.img
+                      ref={ref2}
+                      style={propsPhoto2}
                       src={frank7}
                       alt='frank-m-periche-teaching-kids-in-his-community'
                     />
@@ -80,7 +103,12 @@ export default function About({ values, english, spanish }) {
             </div>
             <div className='col-lg-6 col-md-6 col-xl-6'>
               <div className='about-image-left'>
-                <img src={frankCreator} alt='Frank M Periche the creator' />
+                <animated.img
+                  ref={ref3}
+                  style={propsPhoto3}
+                  src={frankCreator}
+                  alt='Frank M Periche the creator'
+                />
               </div>
             </div>
           </div>
