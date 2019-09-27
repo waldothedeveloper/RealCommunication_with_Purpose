@@ -21,21 +21,21 @@ export default function About({ values, english, spanish }) {
     opacity: onScreenPhoto1 ? 1 : 0,
     from: { opacity: 0 },
     config: config.slow,
-    delay: 500
+    delay: 200
   });
 
   const propsPhoto2 = useSpring({
     opacity: onScreenPhoto2 ? 1 : 0,
     from: { opacity: 0 },
     config: config.slow,
-    delay: 800
+    delay: 200
   });
 
   const propsPhoto3 = useSpring({
     opacity: onScreenPhoto3 ? 1 : 0,
     from: { opacity: 0 },
     config: config.slow,
-    delay: 800
+    delay: 200
   });
 
   return (
